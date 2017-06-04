@@ -25,23 +25,26 @@ def getDir(a,b):
 
 	return direction
 
-def make2DTriangle():
+def make2DTriangle(num_iterations=5000):
 	''' Follows an iterative algorithm for generating Sierpinski's Triangle.
 	Three reference points define the edges of the triangle. One point is randomly 
 	initilized. One of the three vertex points is selected randomly. The midpoint
 	between the current point and the vertex point is marked and becomes the new 
 	current point. A vertex point is picked at random again, and this process repeated.
 
+	Arguments:
+	num_iterations: number of points to be plotted
+
 	Outputs a plot of Sierpinski's Triangle.
 	'''
 	
 	# Total number of iterations (i.e. points plotted)
-	total_iterations = 100000
+	total_iterations = num_iterations
 
 	# Define outer triangle coordinates
 	a = (1,1)
 	b = (60,1)
-	c = (50,40)
+	c = (30,40)
 	boundary_points = [a,b,c]
 
 	# Initialize starting point within or on the triangle
@@ -73,18 +76,21 @@ def make2DTriangle():
 	plt.title("{} Iterations".format(total_iterations))
 	plt.show()
 
-def make3DTriangle():
+def make3DTriangle(num_iterations=1000):
 	''' Follows an iterative algorithm for generating Sierpinski's Triangle.
 	Three reference points define the edges of the triangle. One point is randomly 
 	initilized. One of the three vertex points is selected randomly. The midpoint
 	between the current point and the vertex point is marked and becomes the new 
 	current point. A vertex point is picked at random again, and this process repeated.
 
+	Arguments:
+	num_iterations: number of points to be plotted
+
 	Outputs a plot of Sierpinski's Triangle.
 	'''
 	
 	# Total number of iterations (i.e. points plotted)
-	total_iterations = 100
+	total_iterations = num_iterations
 
 	# Define outer triangle coordinates
 	a = (1,1,1)
@@ -128,4 +134,4 @@ def make3DTriangle():
 	plt.title("{} Iterations".format(total_iterations))
 	plt.show()
 
-make3DTriangle()
+make2DTriangle(50000)
